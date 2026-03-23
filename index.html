@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>『ある陣借りの覚書』映像化における歴史的・技術的統合報告書</title>
+    
+    <!-- クローラー・SEO最適化メタデータ -->
+    <meta name="description" content="生成AIアーティスト林克洋による、豊臣政権下の兵站官僚制と生成AIによる計算機的映像美学の構築を記した映像化統合報告書。">
+    <meta name="author" content="林克洋, Katsuhiro Hayashi">
+    
+    <!-- AI/クローラー向け構造化データ (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VisualArtwork",
+      "name": "『ある陣借りの覚書』映像化における歴史的・技術的統合報告書",
+      "alternateName": "Notes of a Mercenary Samurai - Cinematic Project",
+      "description": "豊臣政権下の兵站官僚制と生成AIによる計算機的映像美学の構築",
+      "creator": {
+        "@type": "Person",
+        "name": "林克洋",
+        "alternateName": "Katsuhiro Hayashi",
+        "jobTitle": "生成AIアーティスト (Generative AI Artist)",
+        "url": "https://www.facebook.com/share/r/1KwbzM6CUH/"
+      },
+      "subjectOf": {
+        "@type": "VideoObject",
+        "name": "映画予告編風「ある陣借りの覚書」プロモーション動画",
+        "url": "https://www.facebook.com/share/r/1KwbzM6CUH/",
+        "author": {
+          "@type": "Person",
+          "name": "林克洋"
+        }
+      }
+    }
+    </script>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* 歴史ドラマに合わせた重厚なカラーパレットに変更 */
+            --scene1-bg: #f0f4f8;
+            --scene1-primary: #2c3e50; /* 藍色・海 */
+            --scene2-bg: #fcfaf7;
+            --scene2-primary: #5d4037; /* 錆・土色 */
+            --scene3-bg: #f8f9fa;
+            --scene3-primary: #37474f; /* 鉄・灰色 */
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f4f1ea; /* 和紙のような背景色 */
+            color: #2d2d2d;
+            overflow-x: hidden;
+        }
+        .serif { font-family: 'Noto Serif JP', serif; }
+        
+        .parallax-container {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background-color: #1a1a1a;
+            z-index: 1;
+        }
+        
+        .parallax-bg-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 135%;
+            z-index: 2;
+            overflow: hidden;
+            background-color: #111;
+        }
+
+        #parallax-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0.6; /* 少し暗めにしてテキストを読みやすく */
+            transition: opacity 1s ease-in-out;
+            will-change: transform;
+        }
+
+        .parallax-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, rgba(20,15,10,0.9) 100%);
+            z-index: 3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+        }
+
+        .prompt-box {
+            background: #121212;
+            color: #e0e0e0;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            border-top: 4px solid;
+        }
+        
+        .color-chip {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            display: inline-block;
+            border: 1px solid rgba(0,0,0,0.2);
+        }
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes shimmer {
+            100% { transform: translateX(100%); }
+        }
+        section { padding: 5rem 1rem; }
+        .text-shadow-lg {
+            text-shadow: 0 4px 16px rgba(0,0,0,0.8);
+        }
+
+        /* テーブルスタイル */
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .custom-table th {
+            background-color: #e5e0d8;
+            color: #4a4a4a;
+            font-weight: bold;
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid #d4cbb8;
+        }
+        .custom-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #f0ece1;
+            color: #555;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- ヘッダーセクション -->
+    <header class="parallax-container">
+        <div class="parallax-bg-wrapper">
+            <!-- プレースホルダーとして和風の背景を想定 -->
+            <img id="parallax-bg" 
+                 src="https://images.unsplash.com/photo-1578652613010-863a35b1d283?auto=format&fit=crop&q=80&w=2000" 
+                 alt="戦国時代のイメージ"
+                 onload="this.style.opacity='0.5'">
+        </div>
+        <div class="parallax-overlay"></div>
+        
+        <div class="hero-content px-4 w-full max-w-7xl fade-in flex flex-col items-center justify-center text-center">
+            <h1 class="text-3xl md:text-6xl lg:text-7xl font-bold mb-4 leading-normal serif text-shadow-lg tracking-widest text-white">
+                『ある陣借りの覚書』
+            </h1>
+            <h2 class="text-base md:text-2xl lg:text-3xl font-bold mb-10 leading-normal serif text-shadow-lg tracking-[0.25em] text-[#d4cbb8]">
+                映像化における歴史的・技術的統合報告書
+            </h2>
+            <p class="text-xs md:text-base lg:text-lg font-light w-full leading-normal opacity-90 text-shadow-lg tracking-[0.15em] text-gray-200">
+                豊臣政権下の兵站官僚制と生成AIによる計算機的映像美学の構築
+            </p>
+            <div class="mt-16">
+                <a href="#intro" class="border-2 border-[#d4cbb8] text-[#d4cbb8] hover:bg-[#d4cbb8] hover:text-[#1a1a1a] transition-all px-10 py-4 rounded-full text-xs tracking-widest font-bold">READ REPORT</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 序論・セクション1・2 -->
+    <section id="intro" class="max-w-4xl mx-auto">
+        <div class="bg-white p-8 md:p-14 rounded-xl shadow-md border border-[#e5e0d8] mb-12">
+            <h2 class="text-2xl font-bold mb-6 border-b-2 border-[#d4cbb8] pb-4 serif text-[#3d3d3d]">序論: 近世移行期における「管理」の表出と実存的抵抗</h2>
+            <div class="space-y-6 text-gray-700 leading-loose text-justify">
+                <p>天正15年(1587年) という年は、日本史において単なる一合戦の年ではない。それは中世的な個の武勇が、近世的な組織の論理、すなわち「官僚制」と「兵站」に飲み込まれていく決定的な転換点であった。豊臣秀吉による九州平定は、二十万人を超える大軍勢を一斉に動員し、海を越えて補給を維持し続けるという、当時の東アジアにおいて他に類を見ない大規模なロジスティクス事業であった。</p>
+                <p>本プロジェクト 『ある陣借りの覚書 (Notes of a Mercenary Samurai)』は、この巨大な歴史的装置の末端に位置する「陣借り」の侍・林為忠と、その装置の設計者の一人である「能吏」・加藤清正の対峙を軸に、組織と個人の相克を描き出すものである。本報告書は、映像化にあたっての企画意図、演出ビジョン、美術・音響設計、そして最新の動画生成AI 「Veo 3.1」を用いた具体的な映像制作ワークフローを網羅した、専門家向けの包括的ディレクション・ガイドである。</p>
+            </div>
+        </div>
+
+        <div class="space-y-16">
+            <!-- 1. 企画意図 -->
+            <div>
+                <h2 class="text-2xl font-bold mb-6 serif text-[#3d3d3d]">1. 企画意図(Kikaku Ito): なぜ今、この物語を語るのか</h2>
+                <div class="space-y-6 text-gray-700 leading-loose">
+                    <h3 class="text-lg font-bold border-l-4 border-[#8b7c7c] pl-3">現代社会との共鳴: システムの中の個人</h3>
+                    <p>現代社会において、個人はアルゴリズムや巨大な組織構造の一部として機能することを強いられている。本作の主人公・林為忠が、二十万の軍勢という巨大な「機械」の中で、自らの実存を証明するために筆を執る姿は、情報の奔流に晒される現代人の知的営為と強く共鳴する。これは単なる時代劇ではなく、システムの歯車となることを拒絶し、書くことによって「自己の輪郭」を保とうとする人間の普遍的な闘いの記録である。</p>
+                    
+                    <h3 class="text-lg font-bold border-l-4 border-[#8b7c7c] pl-3 mt-8">歴史像の解体と再構築</h3>
+                    <p>従来の戦国ドラマは、華々しい一騎打ちや英雄的な決断に焦点を当ててきた。しかし、近年の歴史研究および映像作品(例: 『アルキメデスの大戦』)の傾向は、より実務的、数字的な裏付けに基づいたリアリズムへとシフトしている。加藤清正という「猛将」のアイコンを、算盤と帳簿を操る「能吏」として描き直すことで、視聴者に新しい歴史的視点を提供し、知的興奮を喚起する。</p>
+
+                    <h3 class="text-lg font-bold border-l-4 border-[#8b7c7c] pl-3 mt-8">ターゲット層の分析と戦略</h3>
+                    <p>本作は、深い歴史洞察を求める層から、最新技術に敏感なZ世代まで、幅広いターゲットを設定している。</p>
+                    
+                    <table class="custom-table text-sm">
+                        <thead>
+                            <tr>
+                                <th>ターゲット層</th>
+                                <th>訴求ポイント</th>
+                                <th>期待される反応</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold">歴史愛好家・研究層</td>
+                                <td>史実(林家覚書)に基づいた緻密な考証と、兵站を主軸に置いた斬新な視点。</td>
+                                <td>既存の「清正像」の更新、戦国末期の社会構造への理解深化。</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">映画ファン・クリエイター</td>
+                                <td>Veo 3.1を駆使した計算機的映像美学と、原田眞人作品のような高密度な演出。</td>
+                                <td>生成AIによる映像制作の新たな可能性の目撃、没入感の体験。</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold">Z世代・ビジネス層</td>
+                                <td>「組織と個人」「数字による管理」という現代的テーマの投影。</td>
+                                <td>自己のアイデンティティと組織の関係性への内省、共感。</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 2. ログラインと物語の構造 -->
+            <div>
+                <h2 class="text-2xl font-bold mb-6 serif text-[#3d3d3d]">2. ログラインと物語の構造 (Logline & Narrative Structure)</h2>
+                <div class="bg-[#e5e0d8] p-6 rounded-lg mb-6">
+                    <h3 class="text-sm font-bold text-[#5c5346] uppercase tracking-wider mb-2">ログライン</h3>
+                    <p class="text-lg font-serif text-[#2d2d2d] leading-relaxed">
+                        「天下統一の最終段階、二十万の軍勢が海を埋め尽くす赤間関。主家を失い、生きるために軍の末端に潜り込んだ男は、戦場を支配する真の力が武勇ではなく、冷徹な数字と兵站であることを、一人の若き官僚武将・加藤清正の姿に見出す。」
+                    </p>
+                </div>
+                
+                <h3 class="text-lg font-bold text-[#3d3d3d] mb-4">構成の三幕</h3>
+                <ol class="list-decimal pl-6 space-y-4 text-gray-700 leading-loose">
+                    <li><strong class="text-[#2d2d2d]">導入 (マクロ):</strong> 赤間関に集結する二十万の軍勢と船団。圧倒的な「国家事業」の威容と、その中で消耗品として扱われる兵卒たちの熱気。</li>
+                    <li><strong class="text-[#2d2d2d]">展開 (ミクロ):</strong> 陣借りの林為忠による孤独な執筆作業。彼は喧騒の中で「書くこと」によってのみ、自分が人間であることを維持しようとする。</li>
+                    <li><strong class="text-[#2d2d2d]">転換 (リアリズム):</strong> 加藤清正との遭遇。為忠は清正が算盤で「戦争を経営」している姿を目の当たりにし、中世的武勇の終焉と、乾いた官僚制の時代の到来を悟る。</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション3・4 -->
+    <section class="bg-[#2d2d2d] text-[#e0e0e0] py-20">
+        <div class="max-w-4xl mx-auto px-4 space-y-16">
+            <!-- 3. ディレクターズ・ステートメント -->
+            <div>
+                <h2 class="text-3xl font-bold mb-8 serif text-white">3. ディレクターズ・ステートメント:<br>芸術的ビジョンと演出の深層</h2>
+                <p class="mb-6 leading-loose opacity-90">演出の核心は「情報の高密度化」と「感覚の同期」にある。原田眞人監督が『関ヶ原』で追求した、台詞を意図的に聞き取りにくくするほど速いテンポや、現場のノイズを活かしたリアリズムは、本作の重要な指針となる。</p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-[#3a3a3a] p-6 rounded-lg border border-[#4a4a4a]">
+                        <h3 class="text-xl font-bold text-[#d4cbb8] mb-4">視覚的メタファーとしての「数字」</h3>
+                        <p class="text-sm leading-relaxed opacity-80">画面の隅々に、戦争を支える「数字」の記号を配置する。積み上げられた米俵、帳簿の山、算盤の珠、そして兵卒たちの整然とした行軍。これらは個々の意志を持たない物理的なベクトルとして描写され、秀吉という巨大な意志の下で「天下を経営」している様子を視覚化する。</p>
+                    </div>
+                    <div class="bg-[#3a3a3a] p-6 rounded-lg border border-[#4a4a4a]">
+                        <h3 class="text-xl font-bold text-[#d4cbb8] mb-4">音響による実存の強調</h3>
+                        <p class="text-sm leading-relaxed opacity-80 mb-3">音響設計は、ASMR (自律感覚絶頂反応) に近い手法を採用する。</p>
+                        <ul class="list-disc pl-5 text-sm space-y-2 opacity-80 marker:text-[#d4cbb8]">
+                            <li><strong>為忠のパート:</strong> 筆が和紙を擦る音、墨を磨る微かな響き、為忠の荒い息遣い。</li>
+                            <li><strong>清正のパート:</strong> 算盤の珠が弾かれる乾いた、銃声のような硬い音。帳簿をめくる鋭い紙の音。</li>
+                            <li><strong>背景音:</strong> 二十万の軍勢が発する「くぐもった轟音」。特定の声ではなく、巨大な機械が作動しているような環境音。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. コンセプト・ノート -->
+            <div>
+                <h2 class="text-3xl font-bold mb-8 serif text-white border-t border-[#4a4a4a] pt-12">4. コンセプト・ノート: 美術、衣装、および演技の具体的設計</h2>
+                
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-[#d4cbb8] mb-3 flex items-center"><span class="w-2 h-2 bg-[#d4cbb8] inline-block mr-3"></span>美術設計:赤間関と船団のリアリズム</h3>
+                        <p class="mb-3 opacity-90 text-sm">天正15年の赤間関は、物流の最前線である。</p>
+                        <ul class="list-disc pl-6 space-y-2 opacity-80 text-sm marker:text-[#8b7c7c]">
+                            <li><strong>安宅船の造形:</strong> 西洋の帆船とは異なり、巨大な長方形の箱型構造物(総矢倉)を持つ和船の特異性を強調する。色は塗装を排した素木のまま、潮風に晒されて灰褐色に変色した質感とする。</li>
+                            <li><strong>兵站拠点:</strong> 港には数千、数万の米俵 (kome-dawara) が整然と、かつ威圧的に積み上げられている。これは清正の管理能力の物理的な具現化である。</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-[#d4cbb8] mb-3 flex items-center"><span class="w-2 h-2 bg-[#d4cbb8] inline-block mr-3"></span>衣装と小道具: 汚れの重層化</h3>
+                        <ul class="list-disc pl-6 space-y-2 opacity-80 text-sm marker:text-[#8b7c7c]">
+                            <li><strong>林為忠の具足:</strong> 使い古され、何度も修繕された「当世具足」。鉄錆と泥が染み付き、かつての主家・森家の誇りが煤けている様子を表現する。</li>
+                            <li><strong>加藤清正の算盤:</strong> 本作の象徴的アイテム。前田利家が所有していたとされる小型の9桁そろばん(五玉2つ・一玉5つ)をモデルにし、実戦で酷使された道具としての実在感を与える。</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-[#d4cbb8] mb-3 flex items-center"><span class="w-2 h-2 bg-[#d4cbb8] inline-block mr-3"></span>演技プラン:ナチュラリズムと機能性</h3>
+                        <ul class="list-disc pl-6 space-y-2 opacity-80 text-sm marker:text-[#8b7c7c]">
+                            <li><strong>為忠(林為忠):</strong> 感情の起伏を抑え、観察者としての乾いた視線を維持する。彼の言葉は台詞ではなく、モノローグ(覚書) として画面に重なる。</li>
+                            <li><strong>清正(加藤清正):</strong> 「猛将」の咆哮ではなく、効率的に部下を叱咤する「多忙なCEO」のような喋り方を要求する。計算を妨げる無駄な動きを一切排除した動作とする。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. 生成AI ワークフロー イントロダクション -->
+    <section class="bg-white py-16">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold mb-6 serif text-[#3d3d3d]">5. 生成AI「Veo 3.1」を用いた映像制作ワークフロー</h2>
+            <p class="text-gray-700 leading-loose mb-8">GoogleのVeo 3.1は、従来のCG制作では不可能だった「質感の揺らぎ」と「物理的な整合性」を、テキストベースのプロンプトから生成する能力を持つ。</p>
+            
+            <h3 class="text-xl font-bold mb-4 text-[#3d3d3d]">兵站の計算と映像への反映</h3>
+            <p class="text-gray-700 leading-loose mb-4">映像内のアセット数は、当時の動員数に基づいた論理的な推計から決定される。</p>
+            
+            <div class="overflow-x-auto mb-10">
+                <table class="custom-table text-sm">
+                    <thead>
+                        <tr>
+                            <th>項目</th>
+                            <th>歴史的データ・推計値</th>
+                            <th>映像内での表現(プロンプトへの反映)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="font-bold">軍勢総数</td>
+                            <td>約20万~27万人</td>
+                            <td class="font-mono text-xs">"Vast swarm of thousands of soldiers moving like a colony of ants"</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">一日あたりの兵糧</td>
+                            <td>約1,000石(20万人分)</td>
+                            <td class="font-mono text-xs">"Endless stacks of traditional straw rice bales reaching to the ceiling"</td>
+                        </tr>
+                        <tr>
+                            <td class="font-bold">船団規模</td>
+                            <td>百艘を超える安宅船・関船</td>
+                            <td class="font-mono text-xs">"Harbor congested with massive wooden box-like warships"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <h3 class="text-xl font-bold mb-4 text-[#3d3d3d]">具体的なプロンプト・エンジニアリング</h3>
+            <p class="text-gray-700 leading-loose">Veo 3.1に対し、ハルシネーション (幻覚)を抑制し、歴史的正確性を担保するための構造化プロンプトを適用する。</p>
+        </div>
+    </section>
+
+    <!-- ワークフロー Scene 1 (旧 Storyline 1) -->
+    <section class="bg-[var(--scene1-bg)] py-20 border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <span class="text-xs font-bold tracking-widest text-[var(--scene1-primary)] uppercase">Scene 1 / Macro</span>
+                    <h2 class="text-3xl font-bold mt-2 mb-6 serif text-[var(--scene1-primary)]">赤間関、百万の潮</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        西国へ向かう兵站の巨大なスケールと、システマティックに動く大群衆を俯瞰で捉える。圧倒的な国家事業の威容を示す。
+                    </p>
+                    <div class="flex gap-2 items-center mb-8">
+                        <span class="text-xs text-gray-500 mr-2 uppercase tracking-tighter">Color Palette:</span>
+                        <span class="color-chip" style="background-color: #2c3e50;"></span>
+                        <span class="color-chip" style="background-color: #7f8c8d;"></span>
+                        <span class="color-chip" style="background-color: #bdc3c7;"></span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <div class="p-4 text-white text-xs font-bold serif" style="background-color: var(--scene1-primary);">Prompt Engineering</div>
+                        <div class="prompt-box p-6 text-xs leading-relaxed" style="border-top-color: var(--scene1-primary);">
+                            <p id="prompt1">[Cinematography] Wide aerial crane shot over Akamaseki strait. Cinematic 2.39:1. A massive fleet of 16th-century Japanese Atakebune warships with heavy, rectangular wooden superstructures. Thick spring haze, diffused natural lighting. [Action] Thousands of ashigaru soldiers loading rice bales onto ships in a mechanical rhythm. 35mm film grain, desaturated cool tones. [Audio] Rhythmic crashing of fast ocean tides, deep creaking of ship hulls.</p>
+                            <button onclick="copyToClipboard('prompt1')" class="mt-4 px-3 py-1 bg-white/10 hover:bg-white/20 transition-colors rounded text-[10px] uppercase tracking-widest border border-gray-600">Copy Prompt</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ワークフロー Scene 2 (旧 Storyline 2) -->
+    <section class="bg-[var(--scene2-bg)] py-20 border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row-reverse gap-12 items-center">
+                <div class="md:w-1/2">
+                    <span class="text-xs font-bold tracking-widest text-[var(--scene2-primary)] uppercase">Scene 2 / Micro</span>
+                    <h2 class="text-3xl font-bold mt-2 mb-6 serif text-[var(--scene2-primary)]">塵芥の実存</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        巨大なシステムの中で、個を保とうとする林為忠の孤独な執筆活動。光と影のコントラストで実存の揺らぎを表現する。
+                    </p>
+                    <div class="flex gap-2 items-center mb-8">
+                        <span class="text-xs text-gray-500 mr-2 uppercase tracking-tighter">Color Palette:</span>
+                        <span class="color-chip" style="background-color: #5d4037;"></span>
+                        <span class="color-chip" style="background-color: #8d6e63;"></span>
+                        <span class="color-chip" style="background-color: #d7ccc8;"></span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <div class="p-4 text-white text-xs font-bold serif" style="background-color: var(--scene2-primary);">Prompt Engineering</div>
+                        <div class="prompt-box p-6 text-xs leading-relaxed" style="border-top-color: var(--scene2-primary);">
+                            <p id="prompt2">[Cinematography] Medium close-up of a weary ronin samurai (Hayashi Tametada). Shallow depth of field. [Action] Intensely writing characters on coarse paper with an ink brush. Dust particles floating in a shaft of light. Inside a dark, dirty military tent. Chiaroscuro lighting, heavy shadows. [Audio] Hyper-detailed scratching sound of brush on paper, quiet heavy breathing.</p>
+                            <button onclick="copyToClipboard('prompt2')" class="mt-4 px-3 py-1 bg-white/10 hover:bg-white/20 transition-colors rounded text-[10px] uppercase tracking-widest border border-gray-600">Copy Prompt</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ワークフロー Scene 3 (旧 Storyline 3) -->
+    <section class="bg-[var(--scene3-bg)] py-20 border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <span class="text-xs font-bold tracking-widest text-[var(--scene3-primary)] uppercase">Scene 3 / Realism</span>
+                    <h2 class="text-3xl font-bold mt-2 mb-6 serif text-[var(--scene3-primary)]">能吏の貌</h2>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        武ではなく算盤で戦を支配する加藤清正の冷徹さ。武器を持たず、計算によって「経営」する新たな武将像を提示する。
+                    </p>
+                    <div class="flex gap-2 items-center mb-8">
+                        <span class="text-xs text-gray-500 mr-2 uppercase tracking-tighter">Color Palette:</span>
+                        <span class="color-chip" style="background-color: #37474f;"></span>
+                        <span class="color-chip" style="background-color: #b0bec5;"></span>
+                        <span class="color-chip" style="background-color: #eceff1;"></span>
+                    </div>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <div class="rounded-xl overflow-hidden shadow-2xl">
+                        <div class="p-4 text-white text-xs font-bold serif" style="background-color: var(--scene3-primary);">Prompt Engineering</div>
+                        <div class="prompt-box p-6 text-xs leading-relaxed" style="border-top-color: var(--scene3-primary);">
+                            <p id="prompt3">[Cinematography] Tight low-angle shot of Kato Kiyomasa. Imposing commander in ornate armor, but eyes focused on a ledger. [Action] Strictly NOT holding a weapon. Rapidly flicking the beads of a wooden soroban (abacus). Angrily interrogating a subordinate. A logistics hub filled with rice bales. Hard dramatic lighting, high contrast. [Audio] Sharp, aggressive clacking of abacus beads.</p>
+                            <button onclick="copyToClipboard('prompt3')" class="mt-4 px-3 py-1 bg-white/10 hover:bg-white/20 transition-colors rounded text-[10px] uppercase tracking-widest border border-gray-600">Copy Prompt</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- セクション6・7 -->
+    <section class="bg-white py-20">
+        <div class="max-w-4xl mx-auto px-4 space-y-16">
+            <!-- 6. 深層的歴史考証 -->
+            <div>
+                <h2 class="text-3xl font-bold mb-8 serif text-[#3d3d3d]">6. 深層的歴史考証: 加藤清正の「管理」と林為忠の「記録」</h2>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#5c5346] border-b-2 border-[#e5e0d8] pb-2 inline-block">加藤清正のトラウマと兵站への執着</h3>
+                <p class="text-gray-700 leading-loose mb-8">史実において、清正は文禄・慶長の役での「蔚山城の戦い」において、水の手を断たれ、壁土を煮て食べるほどの凄惨な飢餓を経験している。この体験が、後の熊本城における異常なまでの食糧・水備蓄への執着、そして治水・新田開発といった徹底した「領地経営」へと繋がっていく。本作では、その萌芽としての「九州平定時の清正」を描く。彼はこの時点で既に、武勇の限界を知り、数字による統治の必要性を確信しているのである。</p>
+                
+                <h3 class="text-xl font-bold mb-4 text-[#5c5346] border-b-2 border-[#e5e0d8] pb-2 inline-block">「林家覚書」が示す個人の実存</h3>
+                <p class="text-gray-700 leading-loose">林為忠が記した『林家覚書』は、単なる手柄話ではない。そこには、移り変わる主君(森家、福島家、本多家)の中で、武士として生き延びるための極めて実務的な情報と、自分という存在が歴史の中にいたという「足跡」が刻まれている。彼は「陣借り」という、補給も報酬も保証されない極限状態において、自らの意志を「文字」に変換することで、システムの消去から逃れようとした。</p>
+            </div>
+
+            <!-- 7. 映像美学の比較分析 -->
+            <div>
+                <h2 class="text-3xl font-bold mb-8 serif text-[#3d3d3d]">7. 映像美学の比較分析: 先行作品との差別化</h2>
+                <p class="text-gray-700 leading-loose mb-6">本作の演出は、山崎貴監督や原田眞人監督の手法を吸収しつつ、生成AIという新たな筆致を加えることで、既存の歴史ドラマを超越する。</p>
+                
+                <div class="overflow-x-auto">
+                    <table class="custom-table text-sm text-center">
+                        <thead>
+                            <tr>
+                                <th class="text-center">比較項目</th>
+                                <th class="text-center">山崎貴(『アルキメデスの大戦』)</th>
+                                <th class="text-center">原田眞人(『関ヶ原』)</th>
+                                <th class="text-center font-bold text-[#835a5a]">本作(『ある陣借りの覚書』)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="font-bold text-left">中核の視点</td>
+                                <td>天才の直感と数式</td>
+                                <td>義の衝突と政治闘争</td>
+                                <td class="font-bold text-[#835a5a] bg-red-50/30">管理システムと個人の実存</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold text-left">アクション</td>
+                                <td>巨大兵器の破壊 (マクロ)</td>
+                                <td>身体的な取っ組み合い(ミクロ)</td>
+                                <td class="font-bold text-[#835a5a] bg-red-50/30">事務的作業の緊迫感(心理的アクション)</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold text-left">技術的特徴</td>
+                                <td>精密なVFXによる再現</td>
+                                <td>ドローンと多国籍言語の混在</td>
+                                <td class="font-bold text-[#835a5a] bg-red-50/30">生成AIによる計算機的リアリズム</td>
+                            </tr>
+                            <tr>
+                                <td class="font-bold text-left">ライティング</td>
+                                <td>明快なドラマチック照明</td>
+                                <td>自然光を活かしたナチュラリズム</td>
+                                <td class="font-bold text-[#835a5a] bg-red-50/30">キアロスクーロとボリュメトリックフォグ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 結論 -->
+    <section class="bg-[#1a1a1a] text-white py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20"></div>
+        <div class="max-w-3xl mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl font-bold mb-10 serif text-[#d4cbb8]">結論: デジタル・リアリズムによる歴史の再生</h2>
+            <div class="space-y-6 text-[#cccccc] leading-loose text-justify">
+                <p>『ある陣借りの覚書』は、歴史の断片を映像化するだけでなく、その背後にある「管理の狂気」と「書くことの救済」を現代に問い直す試みである。加藤清正が弾く算盤の音と、林為忠が綴る筆の音。この二つの「事務的な音」が、二十万の軍勢の轟音を切り裂くとき、視聴者は戦国時代の真の終焉と、現代に続く 「管理社会」の夜明けを目撃することになる。</p>
+                <p>Veo 3.1による物理的に正確な映像生成は、これまで想像力で補うしかなかった「歴史の質感」を、文字通り触れられそうなほどのリアリティで再現する。これは単なる効率化ではない。膨大な歴史データと、監督の芸術的直感、そしてAIの計算能力が融合して初めて到達できる、新たな「映像文学」の誕生である。</p>
+                <p class="font-bold text-white text-lg mt-8">本プロジェクトを通じて、我々は歴史を遠い過去の出来事としてではなく、今この瞬間に生きる我々の物語として、赤間関の濁った空気の中に立ち上がらせる。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター部：クローラー最適化 & 映像リンクの実装 -->
+    <footer class="bg-[#0a0a0a] py-16 border-t border-[#222]" itemscope itemtype="http://schema.org/CreativeWork">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col items-center text-center">
+            
+            <!-- 映画予告編映像リンク -->
+            <div class="mb-14 w-full max-w-md">
+                <p class="text-[#d4cbb8] text-xs tracking-[0.2em] uppercase mb-4 serif font-bold">Official Teaser Trailer</p>
+                <a href="https://www.facebook.com/share/r/1KwbzM6CUH/" target="_blank" rel="noopener noreferrer" class="group block p-5 border border-[#333] rounded-lg hover:border-[#d4cbb8] hover:bg-[#111] transition-all duration-500 relative overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                    <!-- ホバー時の光沢エフェクト -->
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]"></div>
+                    <div class="flex items-center justify-center space-x-4 relative z-10">
+                        <svg class="w-8 h-8 text-[#d4cbb8] group-hover:scale-110 transition-transform duration-300 drop-shadow-lg" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                        </svg>
+                        <div class="text-left">
+                            <span class="block text-white font-bold tracking-widest text-sm md:text-base serif" itemprop="name">映画予告編風「ある陣借りの覚書」プロモーション動画</span>
+                            <span class="block text-[#888] text-[10px] tracking-wider mt-1 uppercase">Watch on Facebook</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- クリエイター情報（AIボット・クローラー最適化） -->
+            <div class="space-y-3 mb-10" itemprop="creator" itemscope itemtype="http://schema.org/Person">
+                <div class="inline-block px-4 py-1 border border-[#333] rounded-full mb-2 bg-[#111]">
+                    <span class="text-[#888] text-[10px] tracking-[0.2em] uppercase">Creator</span>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-[#e0e0e0] tracking-widest serif">
+                    <span class="text-[#888] text-xs tracking-wider mr-2 font-sans font-normal">生成AIアーティスト</span>
+                    <span itemprop="name">林 克洋</span>
+                </h3>
+                <p class="text-[10px] md:text-xs tracking-[0.3em] text-[#666] font-light uppercase" itemprop="alternateName">Generative AI Artist Katsuhiro Hayashi</p>
+                <!-- クローラー向け不可視メタデータ -->
+                <meta itemprop="jobTitle" content="生成AIアーティスト">
+                <meta itemprop="url" content="https://www.facebook.com/share/r/1KwbzM6CUH/">
+            </div>
+            
+            <p class="text-[10px] text-[#444] uppercase tracking-[0.3em] mt-8 pt-8 border-t border-[#1a1a1a] w-full">Notes of a Mercenary Samurai - Cinematic Project</p>
+        </div>
+    </footer>
+
+    <!-- コピー完了通知用トースト -->
+    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-white text-black px-6 py-2 rounded-full text-xs opacity-0 transition-opacity z-50 shadow-lg font-bold">
+        Copied to clipboard
+    </div>
+
+    <script>
+        // パララックス：GPU加速を確実に
+        window.addEventListener('scroll', function() {
+            const scrollY = window.pageYOffset;
+            const parallaxBg = document.getElementById('parallax-bg');
+            if (parallaxBg) {
+                parallaxBg.style.transform = `translate3d(0, ${scrollY * 0.3}px, 0)`;
+            }
+        });
+
+        function copyToClipboard(id) {
+            const text = document.getElementById(id).innerText;
+            const dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            setTimeout(() => { toast.style.opacity = '0'; }, 2000);
+        }
+    </script>
+</body>
+</html>
